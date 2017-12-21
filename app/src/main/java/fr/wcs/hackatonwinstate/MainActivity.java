@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Go to ProfileActivity
-        Button profilebutton = findViewById(R.id.profilebutton);
+        ImageButton profilebutton = findViewById(R.id.imageButtonMember);
         profilebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
