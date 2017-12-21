@@ -3,10 +3,8 @@ package fr.wcs.hackatonwinstate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,5 +25,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Go to PictureActivity
+        ImageButton takepicturebutton = findViewById(R.id.takepicturebutton);
+        takepicturebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }

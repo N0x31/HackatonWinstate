@@ -30,7 +30,6 @@
 
     <ImageButton
         android:id="@+id/imageButtonInfos"
-        style="@android:style/Widget.Holo.Light.ImageButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignLeft="@+id/takepicturebutton"
@@ -41,7 +40,6 @@
 
     <ImageButton
         android:id="@+id/imageButtonCommunity"
-        style="@android:style/Widget.Holo.Light.ImageButton"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentTop="true"
@@ -52,7 +50,6 @@
 
     <ImageButton
         android:id="@+id/imageButtonMember"
-        style="@android:style/Widget.Holo.Light.ImageButton"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignTop="@+id/imageButtonCommunity"
