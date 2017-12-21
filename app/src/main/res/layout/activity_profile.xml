@@ -1,67 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center"
+    android:background="@color/colorBlue"
     tools:context="fr.wcs.hackatonwinstate.ProfileActivity">
+
+    <ImageView
+        android:id="@+id/earthmember"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="top"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/earth" />
+
+
+    <ImageView
+        android:id="@+id/yellowbg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/yellowmemberbg" />
+
+    <ImageView
+        android:id="@+id/imageLevel"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignLeft="@+id/earthmember"
+        android:layout_alignStart="@+id/earthmember"
+        android:layout_alignTop="@+id/imageViewUserAvatar"
+        android:layout_marginTop="48dp"
+        app:srcCompat="@drawable/circle_drawable" />
+
+    <ImageView
+        android:id="@+id/imageWin"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignEnd="@+id/earthmember"
+        android:layout_alignRight="@+id/earthmember"
+        android:layout_below="@+id/textViewLevelNameProfile"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="11dp"
+        app:srcCompat="@drawable/circle_drawable_yellow" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewUserAvatar"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignLeft="@+id/buttonaddpicture"
+        android:layout_alignStart="@+id/buttonaddpicture"
+        android:layout_below="@+id/textViewHackteursName"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/circle_thin_drawable"/>
 
     <Button
-        android:id="@+id/buttonTakeAvatar"
+        android:id="@+id/buttonSignOut"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/yellowbg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:background="@color/colorWhite"
+        android:text="Déconnexion"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlue"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewLevelTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prendre photo"/>
+        android:layout_alignBaseline="@+id/buttonaddpicture"
+        android:layout_alignBottom="@+id/buttonaddpicture"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/imageViewUserAvatar"
+        android:layout_toRightOf="@+id/imageViewUserAvatar"
+        android:text="Level"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewLevelNameProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewUserAvatar"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/textViewSmileTime"
+        android:layout_toRightOf="@+id/textViewSmileTime"
+        android:text="Bizuth du Win"
+        android:textColor="@color/colorBlue"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewNumberWin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonconfirm"
+        android:layout_alignRight="@+id/buttonconfirm"
+        android:layout_alignTop="@+id/imageWin"
+        android:layout_marginTop="20dp"
+        android:text="12"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlue"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewWinTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewSmileTime"
+        android:layout_alignStart="@+id/textViewSmileTime"
+        android:layout_below="@+id/textViewNumberWin"
+        android:layout_toLeftOf="@+id/textViewLevelNameProfile"
+        android:layout_toStartOf="@+id/textViewLevelNameProfile"
+        android:text="wins"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewSmileTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonSignOut"
+        android:layout_alignStart="@+id/buttonSignOut"
+        android:layout_below="@+id/textViewWinTitle"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/_2_0_min_de_sourire"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlue"
+        android:textSize="12sp" />
 
     <Button
-        android:id="@+id/buttonConfirmAvatar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirmer l'avatar"/>
+        android:id="@+id/buttonaddpicture"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/imageViewUserAvatar"
+        android:layout_toLeftOf="@+id/buttonconfirm"
+        android:layout_toStartOf="@+id/buttonconfirm"
+        android:background="@drawable/pictureapp" />
 
-    <TextView
-        android:id="@+id/textViewUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        tools:text="User Name"/>
-
-    <TextView
-        android:id="@+id/textViewUserWinNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        tools:text="Win Number"/>
+    <Button
+        android:id="@+id/buttonconfirm"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/imageViewUserAvatar"
+        android:layout_alignLeft="@+id/textViewSmileTime"
+        android:layout_alignStart="@+id/textViewSmileTime"
+        android:background="@drawable/validerlogo" />
 
     <TextView
         android:id="@+id/textViewUserLevelNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        tools:text="User Level Number"/>
+        android:layout_alignBaseline="@+id/textViewLevelTitle"
+        android:layout_alignBottom="@+id/textViewLevelTitle"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/textViewLevelTitle"
+        android:layout_toRightOf="@+id/textViewLevelTitle"
+        android:text="2"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorBlue"
+        android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textViewUserLevelName"
+        android:id="@+id/textViewHackteursName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        tools:text="User Level Name"/>
+        android:layout_alignTop="@+id/yellowbg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:paddingTop="10dp"
+        android:text="Guillaume"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBlue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/buttonSignOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Déconnexion"/>
-
-</LinearLayout>
+</RelativeLayout>

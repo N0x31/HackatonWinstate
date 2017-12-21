@@ -6,25 +6,18 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.preference.PreferenceManager;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.RequestOptions;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -43,16 +36,16 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ProfileActivity.this);
         mUserId = sharedPreferences.getString("mUserId", mUserId);
 
         mImageViewUserAvatar = findViewById(R.id.imageViewUserAvatar);
-        Button buttonTakeAvatar =  findViewById(R.id.buttonTakeAvatar);
-        Button buttonConfirmAvatar =  findViewById(R.id.buttonConfirmAvatar);
-        final TextView textViewUserName = findViewById(R.id.textViewUserName);
-        final TextView textViewUserWinNumber = findViewById(R.id.textViewUserWinNumber);
+        Button buttonTakeAvatar =  findViewById(R.id.buttonaddpicture);
+        Button buttonConfirmAvatar =  findViewById(R.id.buttonconfirm);
+        final TextView textViewUserName = findViewById(R.id.textViewHackteursName);
+        final TextView textViewUserWinNumber = findViewById(R.id.textViewNumberWin);
         final TextView textViewUserLevelNumber = findViewById(R.id.textViewUserLevelNumber);
-        final TextView textViewUserLevelName = findViewById(R.id.textViewUserLevelName);
+        final TextView textViewUserLevelName = findViewById(R.id.textViewLevelNameProfile);
         Button buttonSignOut = findViewById(R.id.buttonSignOut);
 
         mUserReference = FirebaseHelper.getDatabase().getReference("User").child(mUserId);
