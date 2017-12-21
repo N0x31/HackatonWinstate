@@ -58,7 +58,6 @@
         android:layout_alignStart="@+id/buttonaddpicture"
         android:layout_below="@+id/textViewHackteursName"
         android:layout_marginTop="17dp"
-        android:src="@mipmap/ic_launcher"
         android:background="@drawable/circle_thin_drawable"/>
 
     <Button
