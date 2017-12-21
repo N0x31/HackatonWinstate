@@ -92,12 +92,11 @@
                 android:id="@+id/textViewHackteurs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/colorBlue"
                 android:textSize="18sp"
-                tools:text="hackteurs" />
+                android:text="hackteurs" />
         </LinearLayout>
 
         <LinearLayout
@@ -126,7 +125,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/colorBlue"
                 android:textSize="18sp"
-                tools:text="wins" />
+                android:text="wins" />
         </LinearLayout>
     </LinearLayout>
 
@@ -159,10 +158,11 @@
                 android:id="@+id/memberLevel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bizuth du Win"
                 android:layout_gravity="center"
+                android:text="Bizuth du Win"
                 android:textAlignment="center"
-                android:textColor="@color/colorBlue" />
+                android:textColor="@color/colorBlue"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
