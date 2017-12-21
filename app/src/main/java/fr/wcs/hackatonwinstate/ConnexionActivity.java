@@ -107,9 +107,8 @@ public class ConnexionActivity extends AppCompatActivity {
                             user.setUser_name(userNameContent);
                             user.setUser_password(mEncrypt(userPasswordContent, "AES"));
                             user.setUser_numero("");
-                            user.setUser_win_numbers(0);
                             user.setUser_level_number(0);
-                            user.setUser_level_name("");
+                            user.setUser_level_name("Bizuth du Win");
                             user.setUser_avatar("");
                             String userId = refUser.push().getKey();
                             user.setUid(userId);
