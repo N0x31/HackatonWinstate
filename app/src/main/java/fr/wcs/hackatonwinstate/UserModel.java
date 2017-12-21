@@ -1,5 +1,7 @@
 package fr.wcs.hackatonwinstate;
 
+import java.util.HashMap;
+
 /**
  * Created by apprenti on 12/21/17.
  */
@@ -14,6 +16,7 @@ public class UserModel {
     private String user_level_name;
     private String user_avatar;
     private String uid;
+    private HashMap<String, String> user_smiles = new HashMap<>();
 
     public UserModel() {
         // Needed for firebase
@@ -93,5 +96,13 @@ public class UserModel {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public HashMap<String, String> getUser_smiles() {
+        return user_smiles;
+    }
+
+    public void setUser_smiles(HashMap<String, String> user_smiles) {
+        this.user_smiles = user_smiles;
     }
 }
