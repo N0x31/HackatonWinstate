@@ -8,5 +8,6 @@
     <string name="password">Mot de passe</string>
     <string name="user_avatar_conf_send_photo_title">Envoie de la photo</string>
     <string name="user_avatar_conf_send_photo_message">Envoie de la photo en cours, merci de patienter ...</string>
+    <string name="_2_0_min_de_sourire">2.0 min de\nsourire</string>
 
 </resources>
