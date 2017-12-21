@@ -1,67 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorYellow">
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="282dp"
-        android:layout_height="257dp"
-        app:srcCompat="@drawable/winstate_baseline2_horizontal_rvb_bleu"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/connexionUserName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.523" />
+        android:id="@+id/connectionlogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/connexionUserName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        app:srcCompat="@drawable/infos" />
 
     <EditText
         android:id="@+id/connexionUserName"
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLength="15"
-        android:hint="Pseudo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:hint="Nom"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlue"
+        android:textColorHint="@color/colorBlueAlpha"
         android:inputType="text"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/connexionUserPassword"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        android:maxLength="15" />
 
     <EditText
         android:id="@+id/connexionUserPassword"
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLength="15"
-        android:hint="Password"
+        android:layout_below="@+id/connexionUserName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:textAlignment="center"
+        android:hint="Mot de passe"
+        android:textColorHint="@color/colorBlueAlpha"
+        android:textColor="@color/colorBlue"
         android:inputType="textPassword"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonConnexionSend"
-        app:layout_constraintTop_toBottomOf="@+id/connexionUserName" />
+        android:maxLength="15" />
 
     <ProgressBar
         android:id="@+id/simpleProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/buttonConnexionSend" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/buttonConnexionSend"
-        android:text="Connexion"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="76dp" />
+        android:layout_below="@+id/connexionUserPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorBlue"
+        android:text="Connexion" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
 

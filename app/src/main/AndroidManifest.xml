@@ -11,8 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
             android:theme="@style/NoActionBar"></activity>
-        <activity android:name=".ConnexionActivity">
-
+        <activity android:name=".ConnexionActivity"
+            android:theme="@style/NoActionBar">
         </activity>
         <activity android:name=".ProfileActivity"></activity>
         <activity
