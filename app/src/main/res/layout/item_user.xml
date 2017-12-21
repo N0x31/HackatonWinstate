@@ -12,6 +12,10 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:padding="30dp"
-        tools:text="user_Name"/>
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="user_Name" />
 
 </LinearLayout>
