@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">HackatonWinstate</string>
+    <string name="connexion">Connexion</string>
+    <string name="error_password">Pseudo déjà utilisé ou mot de passe erroné</string>
+    <string name="error_fill">Tu dois remplir tous les champs demandés</string>
+    <string name="created_user">Bienvenue</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="password">Mot de passe</string>
 </resources>
