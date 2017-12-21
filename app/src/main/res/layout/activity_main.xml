@@ -1,39 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBlue">
 
 
-    <Button
-        android:id="@+id/takepicturebutton"
+    <ImageView
+        android:id="@+id/yellowvolet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/earthpicture"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="22dp"
+        app:srcCompat="@drawable/yellowvoley" />
+
+    <ImageView
+        android:id="@+id/earthpicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageButtonCommunity"
+        android:src="@drawable/earth" />
+
+    <ImageButton
+        android:id="@+id/imageButtonInfos"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@+id/takepicturebutton"
+        android:layout_alignStart="@+id/takepicturebutton"
+        android:layout_alignTop="@+id/imageButtonCommunity"
+        android:background="@drawable/infos" />
+
+
+    <ImageButton
+        android:id="@+id/imageButtonCommunity"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="115dp"
+        android:layout_toLeftOf="@+id/imageButtonInfos"
+        android:layout_toStartOf="@+id/imageButtonInfos"
+        android:background="@drawable/communaute" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMember"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/imageButtonCommunity"
+        android:layout_toEndOf="@+id/imageButtonInfos"
+        android:layout_toRightOf="@+id/imageButtonInfos"
+        android:background="@drawable/membre" />
+
+    <ImageButton
+        android:id="@+id/takepicturebutton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
-        android:text="Picture" />
+        android:background="@drawable/photo" />
 
-    <Button
-        android:id="@+id/profilebutton"
+    <LinearLayout
         android:layout_width="wrap_content"
+        android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:paddingLeft="50dp"
+        android:paddingTop="10dp">
+        <LinearLayout
+            android:id="@+id/hackteursbloc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewNumberHackteurs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="157"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewHackteurs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlue"
+                android:textSize="18sp"
+                android:text="hackteurs" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hackteurWinsbloc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/hackteursWinsNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="588"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewHackteursName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="@color/colorBlue"
+                android:textSize="18sp"
+                android:text="wins" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="25dp"
-        android:text="Profil" />
+        android:paddingRight="50dp"
+        android:paddingTop="10dp">
+        <LinearLayout
+            android:id="@+id/memberBloc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-    <Button
-        android:id="@+id/presentationbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/profilebutton"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:layout_toLeftOf="@+id/takepicturebutton"
-        android:layout_toStartOf="@+id/takepicturebutton"
-        android:text="philosophie" />
+            <TextView
+                android:id="@+id/memberName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Quentin"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/memberLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Bizuth du Win"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlue"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/memberWins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/memberwinsNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:layout_marginStart="11dp"
+                android:text="5"
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewmemberwins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wins"
+                android:textColor="@color/colorBlue"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
 </RelativeLayout>
