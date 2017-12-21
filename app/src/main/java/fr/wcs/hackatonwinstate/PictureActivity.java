@@ -8,10 +8,8 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -23,7 +21,7 @@ import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainPopUpActivity extends AppCompatActivity {
+public class PictureActivity extends AppCompatActivity {
 
     private DatabaseReference mUserReference;
     private CircleImageView mImageViewUserSmile;
@@ -33,17 +31,14 @@ public class MainPopUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_pop_up);
+        setContentView(R.layout.activity_picture);
 
-        // PopUp Metrics
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-        getWindow().setLayout((int) (width * .8), (int) (height * .75));
+        // OtherUserUid
+        Intent intent = getIntent();
+        final String otherUserUid = intent.getStringExtra("otherUserUid");
 
         // Get UserId
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainPopUpActivity.this);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PictureActivity.this);
         mUserId = sharedPreferences.getString("mUserId", mUserId);
 
         mImageViewUserSmile = findViewById(R.id.imageViewUserSmile);
@@ -58,7 +53,7 @@ public class MainPopUpActivity extends AppCompatActivity {
                         .setGuidelines(CropImageView.Guidelines.ON)
                         .setAspectRatio(1, 1)
                         .setCropShape(CropImageView.CropShape.OVAL)
-                        .start(MainPopUpActivity.this);
+                        .start(PictureActivity.this);
             }
         });
 
@@ -82,20 +77,20 @@ public class MainPopUpActivity extends AppCompatActivity {
                             public void onSuccess(Uri imageUri) {
                                 mProgressDialog.cancel();
                                 String globalEventPath = String.format("%s/%s/%s/%s", "User", mUserId,
-                                        "user_smiles", mUserId);
+                                        "user_smiles", otherUserUid);
                                 HashMap<String, Object> data = new HashMap<>();
                                 data.put(globalEventPath, imageUri.toString());
                                 mUserReference = FirebaseHelper.getDatabase().getReference("User").child(mUserId);
                                 FirebaseDatabase mDatabase = FirebaseHelper.getDatabase();
                                 mDatabase.getReference().updateChildren(data);
-                                Intent intent = new Intent(MainPopUpActivity.this, MainActivity.class);
+                                Intent intent = new Intent(PictureActivity.this, MainActivity.class);
                                 startActivity(intent);
                             }
 
                             @Override
                             public void onFailure(String error) {
                                 mProgressDialog.cancel();
-                                Toast.makeText(MainPopUpActivity.this, "Erreur", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PictureActivity.this, "Erreur", Toast.LENGTH_SHORT).show();
                             }
                         });
             }
@@ -112,7 +107,7 @@ public class MainPopUpActivity extends AppCompatActivity {
                 mImageViewUserSmile.setImageDrawable(Drawable.createFromPath(resultUri.getPath()));
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
-                Toast.makeText(MainPopUpActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(PictureActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     }

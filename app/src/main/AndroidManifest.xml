@@ -16,7 +16,7 @@
             android:theme="@style/NoActionBar" />
         <activity
             android:name=".ConnexionActivity"
-            android:theme="@style/NoActionBar"></activity>
+            android:theme="@style/NoActionBar" />
         <activity android:name=".ProfileActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
@@ -32,8 +32,10 @@
         </activity>
         <activity android:name=".PhotoActivity">
         </activity>
-        <activity android:name=".MainPopUpActivity"
-            android:theme="@style/AppTheme.PopUp">
+        <activity
+            android:name=".PictureActivity">
+        </activity>
+        <activity android:name=".ListUsersActivity">
         </activity>
     </application>
 
