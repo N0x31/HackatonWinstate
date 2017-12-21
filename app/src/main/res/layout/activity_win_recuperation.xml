@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context="fr.wcs.hackatonwinstate.WinRecuperationActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewWinReceived"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/textViewCitations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Citations"/>
+
+    <TextView
+        android:id="@+id/textViewCompliments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Compliments"/>
+
+    <TextView
+        android:id="@+id/textViewDefi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Défis"/>
+
+</LinearLayout>

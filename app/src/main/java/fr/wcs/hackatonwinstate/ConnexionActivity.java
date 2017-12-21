@@ -30,6 +30,7 @@ public class ConnexionActivity extends AppCompatActivity {
     private String mUserId = "UserKey";
     private String mEncrypt = "encrypt";
     private boolean auth = false;
+    private ProgressBar simpleProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class ConnexionActivity extends AppCompatActivity {
         final String sharedPrefUserName = sharedpreferences.getString(userName, "");
         final String sharedPrefUserPassword = sharedpreferences.getString(userPassword, "");
         final String sharedPrefUserKey = sharedpreferences.getString(mUserId, "");
-        final ProgressBar simpleProgressBar = findViewById(R.id.simpleProgressBar);
+        simpleProgressBar = findViewById(R.id.simpleProgressBar);
 
         //On rempli les editText avec les sharedPreferences si c'est pas notre premiere connexion
         if (!sharedPrefUserName.isEmpty() && !sharedPrefUserPassword.isEmpty()) {
@@ -93,6 +94,7 @@ public class ConnexionActivity extends AppCompatActivity {
 
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         startActivity(intent);
+                                        simpleProgressBar.setVisibility(View.GONE);
                                     } else {
                                         // Si le mot de passe ou le pseudo ne concordent pas
                                         Toast.makeText(getApplicationContext(), R.string.error_password, Toast.LENGTH_SHORT).show();
@@ -125,6 +127,7 @@ public class ConnexionActivity extends AppCompatActivity {
                             editor.apply();
                             Toast.makeText(getApplicationContext(), R.string.created_user, Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            simpleProgressBar.setVisibility(View.GONE);
                         }
 
                         // Encryptage du mot de passe
@@ -145,5 +148,11 @@ public class ConnexionActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        simpleProgressBar.setVisibility(View.GONE);
     }
 }
