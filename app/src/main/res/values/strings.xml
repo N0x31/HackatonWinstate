@@ -10,4 +10,28 @@
     <string name="user_avatar_conf_send_photo_message">Envoie de la photo en cours, merci de patienter ...</string>
     <string name="_2_0_min_de_sourire">2.0 min de\nsourire</string>
 
+    <!--Spinner Citation-->
+    <string-array name="spinnerCitations">
+        <item>Envoyer une citation</item>
+        <item>Bite</item>
+        <item>Cul</item>
+        <item>Boul</item>
+    </string-array>
+
+    <!--Spinner Compliment-->
+    <string-array name="spinnerCompliment">
+        <item>Envoyer un compliment</item>
+        <item>Bite</item>
+        <item>Cul</item>
+        <item>Boul</item>
+    </string-array>
+
+    <!--Spinner Défi-->
+    <string-array name="spinnerDefi">
+        <item>Envoyer un Defi</item>
+        <item>Bite</item>
+        <item>Cul</item>
+        <item>Boul</item>
+    </string-array>
+
 </resources>
