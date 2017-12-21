@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         profilebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PhotoActivity.class);
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -46,6 +46,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ListUsersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Go to ListWinReceivedActivity
+        ImageButton seewinsbutton = findViewById(R.id.seewinsbutton);
+        seewinsbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ListWinReceivedActivity.class);
                 startActivity(intent);
             }
         });
