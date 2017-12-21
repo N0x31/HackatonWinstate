@@ -9,7 +9,10 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -17,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -95,6 +99,42 @@ public class PictureActivity extends AppCompatActivity {
                         });
             }
         });
+
+
+        final Spinner spinnerCitation = (Spinner) findViewById(R.id.spinnercitation);
+        final Spinner spinnerCompliment = (Spinner) findViewById(R.id.spinnercompliments);
+        final Spinner spinnerDefi = (Spinner) findViewById(R.id.spinnerdefi);
+
+        //Spinner citation
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapterCitation = ArrayAdapter.createFromResource(this,
+                R.array.spinnerCitations, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+                adapterCitation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+                spinnerCitation.setAdapter(adapterCitation);
+
+
+        //Spinner compliment
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapterCompliment = ArrayAdapter.createFromResource(this,
+                R.array.spinnerCompliment, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapterCompliment.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinnerCompliment.setAdapter(adapterCompliment);
+
+
+        //Spinner défi
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapterDefi = ArrayAdapter.createFromResource(this,
+                R.array.spinnerDefi, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapterDefi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinnerDefi.setAdapter(adapterDefi);
+
+
     }
 
     @Override
