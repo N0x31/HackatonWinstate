@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,10 +33,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfileActivity extends AppCompatActivity {
 
     private DatabaseReference mUserReference;
+    private StorageReference mUserStorageReference;
     private CircleImageView mImageViewUserAvatar;
     private ProgressDialog mProgressDialog;
-    private String mUserId, mUserAvatar;
-    private Object mUserModel;
+    private String mUserId;
+    private UserModel mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,21 +46,40 @@ public class ProfileActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         mUserId = sharedPreferences.getString("mUserId", mUserId);
-        mUserReference = FirebaseHelper.getDatabase().getReference("User").child(mUserId);
 
         mImageViewUserAvatar = findViewById(R.id.imageViewUserAvatar);
         Button buttonTakeAvatar =  findViewById(R.id.buttonTakeAvatar);
         Button buttonConfirmAvatar =  findViewById(R.id.buttonConfirmAvatar);
-        TextView textViewUserName = findViewById(R.id.textViewUserName);
-        TextView textViewUserWinNumber = findViewById(R.id.textViewUserWinNumber);
-        TextView textViewUserLevelNumber = findViewById(R.id.textViewUserLevelNumber);
-        TextView textViewUserLevelName = findViewById(R.id.textViewUserLevelName);
+        final TextView textViewUserName = findViewById(R.id.textViewUserName);
+        final TextView textViewUserWinNumber = findViewById(R.id.textViewUserWinNumber);
+        final TextView textViewUserLevelNumber = findViewById(R.id.textViewUserLevelNumber);
+        final TextView textViewUserLevelName = findViewById(R.id.textViewUserLevelName);
         Button buttonSignOut = findViewById(R.id.buttonSignOut);
 
-//        StorageReference storageRef = FirebaseHelper.getsStorage().getReference("Avatars").child(mUserId);
-//        DatabaseReference databaseReference = FirebaseHelper.getDatabase().getReference("User").child("user_avatar");
+        mUserReference = FirebaseHelper.getDatabase().getReference("User").child(mUserId);
+        mUserReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                mUser = snapshot.getValue(UserModel.class);
+                textViewUserName.setText(mUser.getUser_name());
+                textViewUserWinNumber.setText(String.valueOf(mUser.getUser_win_numbers()));
+                textViewUserLevelNumber.setText(String.valueOf(mUser.getUser_level_number()));
+                textViewUserLevelName.setText(mUser.getUser_level_name());
+//                Glide.with(ProfileActivity.this)
+//                        .load(mUser.getUser_avatar())
+//                        .into(mImageViewUserAvatar);
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+            }
+        });
+
+//        mUserStorageReference = FirebaseHelper.getsStorage().getReference("Avatars").child(mUserId);
 //        Glide.with(ProfileActivity.this)
-//                .load(databaseReference)
+//                .load(mUserStorageReference)
+//                .apply(new RequestOptions()
+//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                        .skipMemoryCache(true))
 //                .into(mImageViewUserAvatar);
 
         buttonTakeAvatar.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +119,15 @@ public class ProfileActivity extends AppCompatActivity {
                                 mProgressDialog.cancel();
                             }
                         });
+            }
+        });
+
+        // Fake déconnexion
+        buttonSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
