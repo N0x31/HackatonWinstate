@@ -136,7 +136,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:paddingRight="50dp"
-        android:paddingTop="20dp">
+        android:paddingTop="20dp"
+        android:id="@+id/linearLayout">
         <LinearLayout
             android:id="@+id/memberBloc"
             android:layout_width="wrap_content"
@@ -192,5 +193,15 @@
                 android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/seewinsbutton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/takepicturebutton"
+        android:layout_marginBottom="65dp"
+        android:layout_toLeftOf="@+id/imageButtonMember"
+        android:layout_toStartOf="@+id/imageButtonMember"
+        android:background="@drawable/smiley" />
 
 </RelativeLayout>
