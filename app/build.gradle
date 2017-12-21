@@ -52,6 +52,8 @@ dependencies {
 
     // Circle Image View
     compile 'de.hdodenhof:circleimageview:2.2.0'
+
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
 }
 
 
