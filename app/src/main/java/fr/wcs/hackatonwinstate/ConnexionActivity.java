@@ -70,7 +70,7 @@ public class ConnexionActivity extends AppCompatActivity {
                     simpleProgressBar.setVisibility(view.GONE);
                 } else {
                     // Sinon on recupere tous les users
-                    final DatabaseReference refUser = FirebaseDatabase.getInstance().getReference("User");
+                    final DatabaseReference refUser = FirebaseHelper.getDatabase().getReference("User");
                     refUser.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -106,10 +106,15 @@ public class ConnexionActivity extends AppCompatActivity {
                             UserModel user = new UserModel();
                             user.setUser_name(userNameContent);
                             user.setUser_password(mEncrypt(userPasswordContent, "AES"));
+                            user.setUser_numero("");
                             user.setUser_win_numbers(0);
+                            user.setUser_level_number(0);
+                            user.setUser_level_name("");
+                            user.setUser_avatar("");
                             String userId = refUser.push().getKey();
-                            refUser.child(userId).setValue(user);
+                            user.setUid(userId);
 
+                            refUser.child(userId).setValue(user);
                             // La clé de l'utilisateur qu'on va utiliser partout dans l'application.
                             mUserId = userId;
 
