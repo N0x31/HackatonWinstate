@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "295174412972",
+    "firebase_url": "https://hackatonwinstate.firebaseio.com",
+    "project_id": "hackatonwinstate",
+    "storage_bucket": "hackatonwinstate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295174412972:android:ffc5ed2765b8125c",
+        "android_client_info": {
+          "package_name": "fr.wcs.hackatonwinstate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295174412972-qsqpmhlk6924tq313vv03pruprq1isup.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.wcs.hackatonwinstate",
+            "certificate_hash": "8fa637f387ef38afc11519478298ec391a057332"
+          }
+        },
+        {
+          "client_id": "295174412972-270ghco3u3v50q6944jetvjkg4mssldh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVabHxXCT0j91a59302TUsiSJoZ8wFDhM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295174412972-270ghco3u3v50q6944jetvjkg4mssldh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
