@@ -14,12 +14,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonTakePicture = (Button) findViewById(R.id.takepicturebutton);
-
-        buttonTakePicture.setOnClickListener(new View.OnClickListener() {
+        // Go to ProfileActivity
+        Button profilebutton = findViewById(R.id.profilebutton);
+        profilebutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), CountActivity.class));
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
 

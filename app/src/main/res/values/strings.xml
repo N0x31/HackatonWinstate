@@ -6,4 +6,7 @@
     <string name="created_user">Bienvenue</string>
     <string name="pseudo">Pseudo</string>
     <string name="password">Mot de passe</string>
+    <string name="user_avatar_conf_send_photo_title">Envoie de la photo</string>
+    <string name="user_avatar_conf_send_photo_message">Envoie de la photo en cours, merci de patienter ...</string>
+
 </resources>
