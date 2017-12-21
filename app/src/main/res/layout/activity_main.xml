@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/earthpicture"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="22dp"
@@ -73,7 +74,7 @@
         android:orientation="vertical"
         android:layout_height="wrap_content"
         android:paddingLeft="50dp"
-        android:paddingTop="10dp">
+        android:paddingTop="20dp">
         <LinearLayout
             android:id="@+id/hackteursbloc"
             android:layout_width="wrap_content"
@@ -138,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:paddingRight="50dp"
-        android:paddingTop="10dp">
+        android:paddingTop="20dp">
         <LinearLayout
             android:id="@+id/memberBloc"
             android:layout_width="wrap_content"
