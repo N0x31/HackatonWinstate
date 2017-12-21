@@ -65,6 +65,17 @@ public class FirebaseHelper {
      * @param userUid
      * @return the FirebaseHelper instance to set the UploadImageListener
      */
+    public static FirebaseHelper uploadSmile(Drawable drawable, String userUid) {
+        StorageReference smilesReference = getsStorage().getReference("Smiles").child(userUid);
+        return uploadImage(smilesReference, drawable);
+    }
+
+    /**
+     * Helper Method uploading a Drawable to the Firebase's Avatar User Entry
+     * @param drawable
+     * @param userUid
+     * @return the FirebaseHelper instance to set the UploadImageListener
+     */
     public static FirebaseHelper uploadAvatar(Drawable drawable, String userUid) {
         StorageReference avatarReference = getsStorage().getReference("Avatars").child(userUid);
         return uploadImage(avatarReference, drawable);
