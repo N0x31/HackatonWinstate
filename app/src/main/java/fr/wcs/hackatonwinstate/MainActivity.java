@@ -24,5 +24,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Go to PictureActivity
+        Button takepicturebutton = findViewById(R.id.takepicturebutton);
+        takepicturebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }

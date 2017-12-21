@@ -33,7 +33,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfileActivity extends AppCompatActivity {
 
     private DatabaseReference mUserReference;
-    private StorageReference mUserStorageReference;
     private CircleImageView mImageViewUserAvatar;
     private ProgressDialog mProgressDialog;
     private String mUserId;
@@ -65,22 +64,14 @@ public class ProfileActivity extends AppCompatActivity {
                 textViewUserWinNumber.setText(String.valueOf(mUser.getUser_win_numbers()));
                 textViewUserLevelNumber.setText(String.valueOf(mUser.getUser_level_number()));
                 textViewUserLevelName.setText(mUser.getUser_level_name());
-//                Glide.with(ProfileActivity.this)
-//                        .load(mUser.getUser_avatar())
-//                        .into(mImageViewUserAvatar);
+                Glide.with(ProfileActivity.this)
+                        .load(mUser.getUser_avatar())
+                        .into(mImageViewUserAvatar);
             }
             @Override
             public void onCancelled(DatabaseError error) {
             }
         });
-
-//        mUserStorageReference = FirebaseHelper.getsStorage().getReference("Avatars").child(mUserId);
-//        Glide.with(ProfileActivity.this)
-//                .load(mUserStorageReference)
-//                .apply(new RequestOptions()
-//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                        .skipMemoryCache(true))
-//                .into(mImageViewUserAvatar);
 
         buttonTakeAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
