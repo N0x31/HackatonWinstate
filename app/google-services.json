@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "295174412972-31t1ugkdsg30mac7h25ntcabnqn9fvsr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.wcs.hackatonwinstate",
+            "certificate_hash": "cf3000441af4b4f0e0704b7991af35e273d680ca"
+          }
+        },
+        {
           "client_id": "295174412972-qsqpmhlk6924tq313vv03pruprq1isup.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
