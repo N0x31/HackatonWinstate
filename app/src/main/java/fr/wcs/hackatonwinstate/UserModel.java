@@ -10,6 +10,8 @@ public class UserModel {
     private String user_password;
     private String user_numero;
     private int user_win_numbers;
+    private int user_level_number;
+    private String user_level;
 
     public UserModel() {
         // Needed for firebase
