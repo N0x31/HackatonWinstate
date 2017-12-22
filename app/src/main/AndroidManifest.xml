@@ -38,8 +38,7 @@
         <activity android:name=".PhotoActivity" />
         <activity
             android:name=".PictureActivity"
-            android:parentActivityName=".ListUsersActivity"
-            android:theme="@style/NoActionBar"/>
+            android:parentActivityName=".ListUsersActivity"/>
         <activity
             android:name=".ListUsersActivity"
             android:parentActivityName=".MainActivity"
