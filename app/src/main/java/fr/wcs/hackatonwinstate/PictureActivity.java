@@ -177,6 +177,7 @@ public class PictureActivity extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
+                Toast.makeText(this, "Bravo ! Joli Sourire !", Toast.LENGTH_SHORT).show();
                 mImageViewUserSmile.setImageDrawable(Drawable.createFromPath(resultUri.getPath()));
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
