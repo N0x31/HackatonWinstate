@@ -40,8 +40,8 @@ public class ProfileActivity extends AppCompatActivity {
         mUserId = sharedPreferences.getString("mUserId", mUserId);
 
         mImageViewUserAvatar = findViewById(R.id.imageViewUserAvatar);
-        Button buttonTakeAvatar =  findViewById(R.id.buttonaddpicture);
-        Button buttonConfirmAvatar =  findViewById(R.id.buttonconfirm);
+        Button buttonaddpicture =  findViewById(R.id.buttonaddpicture);
+        Button buttonconfirm =  findViewById(R.id.buttonconfirm);
         final TextView textViewUserName = findViewById(R.id.textViewHackteursName);
         final TextView textViewUserWinNumber = findViewById(R.id.textViewNumberWin);
         final TextView textViewUserLevelNumber = findViewById(R.id.textViewUserLevelNumber);
@@ -66,7 +66,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        buttonTakeAvatar.setOnClickListener(new View.OnClickListener() {
+        buttonaddpicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CropImage.activity()
@@ -84,7 +84,7 @@ public class ProfileActivity extends AppCompatActivity {
         mProgressDialog.setTitle(getString(R.string.user_avatar_conf_send_photo_title));
         mProgressDialog.setMessage(getString(R.string.user_avatar_conf_send_photo_message));
 
-        buttonConfirmAvatar.setOnClickListener(new View.OnClickListener() {
+        buttonconfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mProgressDialog.show();
@@ -110,7 +110,7 @@ public class ProfileActivity extends AppCompatActivity {
         buttonSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, ConnexionActivity.class);
                 startActivity(intent);
             }
         });
