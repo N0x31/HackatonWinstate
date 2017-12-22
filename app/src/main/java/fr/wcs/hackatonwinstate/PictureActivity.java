@@ -48,6 +48,20 @@ public class PictureActivity extends AppCompatActivity {
         mImageViewUserSmile = findViewById(R.id.imageViewUserSmile);
         Button buttonTakeSmile =  findViewById(R.id.buttonTakeSmile);
         Button buttonConfirmSmile =  findViewById(R.id.buttonConfirmSmile);
+        Button buttonWincat =  findViewById(R.id.buttonWincat);
+
+        buttonWincat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PictureActivity.this, GalleryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Get intent
+        Bundle bundle = this.getIntent().getExtras();
+        int pic = bundle.getInt("image");
+        mImageViewUserSmile.setImageResource(pic);
 
         // Crop Image
         buttonTakeSmile.setOnClickListener(new View.OnClickListener() {
