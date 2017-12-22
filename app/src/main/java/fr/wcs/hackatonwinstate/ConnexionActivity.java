@@ -111,7 +111,7 @@ public class ConnexionActivity extends AppCompatActivity {
                             user.setUser_numero("");
                             user.setUser_level_number(0);
                             user.setUser_level_name("Bizuth du Win");
-                            user.setUser_avatar("");
+                            user.setUser_avatar("https://firebasestorage.googleapis.com/v0/b/hackatonwinstate.appspot.com/o/Avatars%2Finfos.png?alt=media&token=03488c0d-e97e-41ed-8880-9ddcbf122236");
                             String userId = refUser.push().getKey();
                             user.setUid(userId);
 
