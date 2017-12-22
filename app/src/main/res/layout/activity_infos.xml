@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlue"
+    tools:context="fr.wcs.hackatonwinstate.InfosActivity">
+
+
+    <ImageView
+        android:id="@+id/earthmember"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="top"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/earth" />
+
+
+    <ImageView
+        android:id="@+id/yellowbg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/yellowmemberbg" />
+
+    <TextView
+        android:id="@+id/abouttitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/earthmember"
+        android:layout_centerHorizontal="true"
+        android:text="A propos de\n Winstate"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBlue"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/winstateStory"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/abouttitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:background="@drawable/buttonyellowbg"
+        android:text="Winstate Story"
+        android:textColor="@color/colorBlue"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/rules"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/winstateStory"
+        android:layout_alignStart="@+id/winstateStory"
+        android:layout_below="@+id/winstateStory"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/buttonyellowbg"
+        android:text="Les règles"
+        android:textColor="@color/colorBlue"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/foyer"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/rules"
+        android:layout_alignStart="@+id/rules"
+        android:layout_below="@+id/rules"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/buttonyellowbg"
+        android:text="Le Foyer"
+        android:textColor="@color/colorBlue"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/foyer"
+        android:gravity="center"
+        android:layout_marginRight="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/fb" />
+
+        <ImageView
+            android:id="@+id/twitter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/twitt" />
+
+        <ImageView
+            android:id="@+id/link"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/link" />
+
+        <ImageView
+            android:id="@+id/youtube"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/youtub" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

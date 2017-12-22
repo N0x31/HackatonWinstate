@@ -13,16 +13,16 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/NoActionBar"
-            android:parentActivityName=".ConnexionActivity"/>
+            android:parentActivityName=".ConnexionActivity"
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".ConnexionActivity"
-            android:theme="@style/NoActionBar"
-            android:noHistory="true"/>
+            android:noHistory="true"
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".ProfileActivity"
-            android:theme="@style/NoActionBar"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/NoActionBar" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" /> <!-- optional (needed if default theme has no action bar) -->
@@ -36,18 +36,28 @@
             </intent-filter>
         </activity>
         <activity android:name=".PhotoActivity" />
-        <activity android:name=".PictureActivity"
-            android:parentActivityName=".ListUsersActivity"/>
+        <activity
+            android:name=".PictureActivity"
+            android:parentActivityName=".ListUsersActivity"
+            android:theme="@style/NoActionBar"/>
         <activity
             android:name=".ListUsersActivity"
-            android:theme="@style/NoActionBar"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".WinRecuperationActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".ListWinReceivedActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".GalleryActivity"
-            android:parentActivityName=".ListUsersActivity"></activity>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".WinRecuperationActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ListWinReceivedActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".GalleryActivity"
+            android:parentActivityName=".ListUsersActivity" />
+        <activity android:name=".VirusActivity"
+            android:theme="@style/NoActionBar"/>
+        <activity android:name=".InfosActivity"
+            android:theme="@style/NoActionBar">
+        </activity>
     </application>
 
 </manifest>

@@ -30,6 +30,26 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         mUserId = sharedPreferences.getString("mUserId", mUserId);
 
+        // Go to InfosActivity
+        ImageButton infosbutton = findViewById(R.id.imageButtonInfos);
+        infosbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InfosActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Go to Virus Activity
+        ImageButton virusButton = findViewById(R.id.imageButtonCommunity);
+        virusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, VirusActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Go to ProfileActivity
         ImageButton profilebutton = findViewById(R.id.imageButtonMember);
         profilebutton.setOnClickListener(new View.OnClickListener() {
