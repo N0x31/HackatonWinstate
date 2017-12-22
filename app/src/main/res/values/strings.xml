@@ -41,17 +41,25 @@
 
     <!--Spinner Défi-->
     <string-array name="spinnerDefi">
-        <item>Ajoute un défi !</item>
-        <item>Reste un quart d'heure scotcher à une chaise.</item>
-        <item>Remporte 10 wins aujourd'hui !</item>
-        <item>Embrasse quelqu'un sur la joue ou, plus osé, sur la bouche !</item>
-        <item>Sauter habillé dans la piscine (s'il y a une piscine)</item>
-        <item>Se renverser un verre d'eau sur la tête</item>
-        <item>Mettre des lunettes de piscine et recouvrir son visage par de la chantilly</item>
-        <item>Boire une cuillère de vinaigre</item>
-        <item>Achète moi des bonbons !</item>
-        <item>Marcher à quatre pattes pendant une heure</item>
-        <item>Faire le tour de la maison en sous-vêtements</item>
+        <item>Ajoute un conseil bonheur !</item>
+        <item>Se glisser sous les draps frais</item>
+        <item>Prendre un bain chaud</item>
+        <item>Se mettre en pyjama après une longue journée</item>
+        <item>Sentir l’herbe sous ses pieds </item>
+        <item>Cueillir des petits fruits</item>
+        <item>Cuisiner des longues recettes</item>
+        <item>Enfiler des pantoufles</item>
+        <item>Sentir la brise qui entre par les fenêtres</item>
+        <item>La chaleur du soleil sur son visage</item>
+        <item>Tremper des biscuits dans du lait</item>
+        <item>Colorier des mandalas</item>
+        <item>Marcher dans les feuilles mortes</item>
+        <item>L’air frais sur son visage après une journée à l’intérieur </item>
+        <item>Se faire un masque pour le visage</item>
+        <item>Entendre une vieille chanson qu’on aimait à la radio</item>
+        <item>Les soupers d’amis ou de famille</item>
+        <item>S’acheter/cueillir/recevoir des fleurs</item>
+        <item>Avoir des nouvelles d’un vieil ami</item>
     </string-array>
 
 </resources>
