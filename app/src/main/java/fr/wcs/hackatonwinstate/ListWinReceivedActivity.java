@@ -32,6 +32,9 @@ public class ListWinReceivedActivity extends AppCompatActivity {
     private UserAdapter mUserAdapter;
     private String mUserId;
     private ArrayList<String> mLinkFirebase = new ArrayList<>();
+    private ArrayList<String> mCitations = new ArrayList<>();
+    private ArrayList<String> mCompliments = new ArrayList<>();
+    private ArrayList<String> mDefis = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +69,48 @@ public class ListWinReceivedActivity extends AppCompatActivity {
                         public void onCancelled(DatabaseError databaseError) {
                         }
                     });
+                    mUserReference.child(dsp.getKey()).child("user_citations").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                                if(dsp.getKey().equals(mUserId)) {
+                                    mCitations.add(String.valueOf(dsp.getValue()));
+                                }
+                            }
+                            mUserAdapter.notifyDataSetChanged();
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+                    mUserReference.child(dsp.getKey()).child("user_compliments").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                                if(dsp.getKey().equals(mUserId)) {
+                                    mCompliments.add(String.valueOf(dsp.getValue()));
+                                }
+                            }
+                            mUserAdapter.notifyDataSetChanged();
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+                    mUserReference.child(dsp.getKey()).child("user_defis").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                                if(dsp.getKey().equals(mUserId)) {
+                                    mDefis.add(String.valueOf(dsp.getValue()));
+                                }
+                            }
+                            mUserAdapter.notifyDataSetChanged();
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
                 }
             }
             @Override
@@ -88,6 +133,9 @@ public class ListWinReceivedActivity extends AppCompatActivity {
                 Intent intent = new Intent(ListWinReceivedActivity.this, WinRecuperationActivity.class);
                 intent.putExtra("position", position);
                 intent.putStringArrayListExtra("mLinkFirebase", mLinkFirebase);
+                intent.putStringArrayListExtra("mCitations", mCitations);
+                intent.putStringArrayListExtra("mCompliments", mCompliments);
+                intent.putStringArrayListExtra("mDefis", mDefis);
                 startActivity(intent);
             }
 

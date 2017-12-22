@@ -38,7 +38,8 @@
             android:name=".ListUsersActivity"
             android:theme="@style/NoActionBar" />
         <activity android:name=".WinRecuperationActivity" />
-        <activity android:name=".ListWinReceivedActivity"></activity>
+        <activity android:name=".ListWinReceivedActivity" />
+        <activity android:name=".GalleryActivity"></activity>
     </application>
 
 </manifest>

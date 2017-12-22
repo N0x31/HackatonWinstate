@@ -10,23 +10,36 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewUserSmile"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_alignLeft="@+id/spinnercompliments"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/spinnercompliments"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/pictureapp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/pictureapp" />
 
     <Button
         android:id="@+id/buttonTakeSmile"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinnercompliments"
+        android:layout_alignStart="@+id/spinnercompliments"
         android:layout_below="@+id/imageViewUserSmile"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="20dp"
         android:background="@color/colorYellow"
-        android:text="Prendre un nouveau sourire"
+        android:text="Envoi un sourire"
+        android:textColor="@color/colorBlue"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonWincat"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinnercompliments"
+        android:layout_alignEnd="@+id/spinnercompliments"
+        android:layout_alignRight="@+id/spinnercompliments"
+        android:background="@color/colorYellow"
+        android:text="Envoi un wincat"
         android:textColor="@color/colorBlue"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -35,11 +48,13 @@
         android:id="@+id/buttonConfirmSmile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spinnercitation"
         android:background="@color/colorYellow"
-        android:text="Envoi ton plus beau sourire"
+        android:text="Envoi un Win !"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:textColor="@color/colorBlue"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -51,7 +66,7 @@
         android:background="@color/colorWhite"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/buttonTakeSmile"
-        android:layout_marginTop="22dp" />
+        android:layout_marginTop="15dp" />
 
     <Spinner
         android:id="@+id/spinnerdefi"
@@ -60,7 +75,7 @@
         android:background="@color/colorWhite"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/spinnercompliments"
-        android:layout_marginTop="17dp" />
+        android:layout_marginTop="15dp" />
 
     <Spinner
         android:id="@+id/spinnercitation"
@@ -69,6 +84,7 @@
         android:background="@color/colorWhite"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/spinnerdefi"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
 
 </RelativeLayout>
