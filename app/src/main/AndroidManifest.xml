@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fr.wcs.hackatonwinstate">
+          package="fr.wcs.hackatonwinstate">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -13,32 +13,34 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/NoActionBar" />
+            android:theme="@style/NoActionBar"/>
         <activity
             android:name=".ConnexionActivity"
-            android:theme="@style/NoActionBar" />
+            android:theme="@style/NoActionBar"/>
         <activity
             android:name=".ProfileActivity"
-            android:theme="@style/NoActionBar" />
+            android:theme="@style/NoActionBar"/>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" /> <!-- optional (needed if default theme has no action bar) -->
+            android:theme="@style/Base.Theme.AppCompat"/> <!-- optional (needed if default theme has no action bar) -->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".PhotoActivity" />
-        <activity android:name=".PictureActivity" />
+        <activity android:name=".PhotoActivity"/>
+        <activity android:name=".PictureActivity"/>
         <activity
             android:name=".ListUsersActivity"
-            android:theme="@style/NoActionBar" />
-        <activity android:name=".WinRecuperationActivity" />
-        <activity android:name=".ListWinReceivedActivity"></activity>
+            android:theme="@style/NoActionBar"/>
+        <activity android:name=".WinRecuperationActivity"/>
+        <activity android:name=".ListWinReceivedActivity"/>
+        <activity android:name=".GiActivity">
+        </activity>
     </application>
 
 </manifest>
