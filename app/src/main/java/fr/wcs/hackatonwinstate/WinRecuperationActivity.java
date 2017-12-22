@@ -50,10 +50,10 @@ public class WinRecuperationActivity extends AppCompatActivity {
                 .into(imageViewWinReceived);
 
         TextView textViewCitations = findViewById(R.id.textViewCitations);
-        textViewCitations.setText(citation);
+        textViewCitations.setText("Une petite citation du bonheur :\n"+citation);
         TextView textViewCompliments = findViewById(R.id.textViewCompliments);
-        textViewCompliments.setText(compliment);
+        textViewCompliments.setText("Un joli compliment :\n"+compliment);
         TextView textViewDefi = findViewById(R.id.textViewDefi);
-        textViewDefi.setText(defi);
+        textViewDefi.setText("Un conseil pour être plus heureux :\n"+defi);
     }
 }
