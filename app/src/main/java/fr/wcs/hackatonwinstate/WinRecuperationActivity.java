@@ -28,8 +28,14 @@ public class WinRecuperationActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final int position = intent.getIntExtra("position", 0);
         final ArrayList<String> mLinkFirebase = intent.getStringArrayListExtra("mLinkFirebase");
+        final ArrayList<String> mCitations = intent.getStringArrayListExtra("mCitations");
+        final ArrayList<String> mCompliments = intent.getStringArrayListExtra("mCompliments");
+        final ArrayList<String> mDefis = intent.getStringArrayListExtra("mDefis");
 
         String link = mLinkFirebase.get(position);
+        String citation = mCitations.get(position);
+        String compliment = mCompliments.get(position);
+        String defi = mDefis.get(position);
 
         // Get UserId
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(WinRecuperationActivity.this);
@@ -44,7 +50,10 @@ public class WinRecuperationActivity extends AppCompatActivity {
                 .into(imageViewWinReceived);
 
         TextView textViewCitations = findViewById(R.id.textViewCitations);
+        textViewCitations.setText(citation);
         TextView textViewCompliments = findViewById(R.id.textViewCompliments);
+        textViewCompliments.setText(compliment);
         TextView textViewDefi = findViewById(R.id.textViewDefi);
+        textViewDefi.setText(defi);
     }
 }
