@@ -10,12 +10,11 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewUserSmile"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_alignLeft="@+id/spinnercompliments"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/spinnercompliments"
-        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:background="@drawable/pictureapp" />
 
     <Button
@@ -24,9 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageViewUserSmile"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="18dp"
         android:background="@color/colorYellow"
-        android:text="Prendre un nouveau sourire"
+        android:text="Prendre ton plus beau sourire !"
         android:textColor="@color/colorBlue"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -37,9 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/spinnercitation"
         android:background="@color/colorYellow"
-        android:text="Envoi ton plus beau sourire"
+        android:text="Envoi ton Win !"
         android:textColor="@color/colorBlue"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -51,7 +51,7 @@
         android:background="@color/colorWhite"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/buttonTakeSmile"
-        android:layout_marginTop="22dp" />
+        android:layout_marginTop="15dp" />
 
     <Spinner
         android:id="@+id/spinnerdefi"
@@ -60,7 +60,7 @@
         android:background="@color/colorWhite"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/spinnercompliments"
-        android:layout_marginTop="17dp" />
+        android:layout_marginTop="15dp" />
 
     <Spinner
         android:id="@+id/spinnercitation"
@@ -69,6 +69,7 @@
         android:background="@color/colorWhite"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/spinnerdefi"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
 
 </RelativeLayout>

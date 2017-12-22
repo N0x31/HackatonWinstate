@@ -68,6 +68,37 @@ public class PictureActivity extends AppCompatActivity {
         mProgressDialog.setTitle(getString(R.string.user_avatar_conf_send_photo_title));
         mProgressDialog.setMessage(getString(R.string.user_avatar_conf_send_photo_message));
 
+        final Spinner spinnerCitation = findViewById(R.id.spinnercitation);
+        final Spinner spinnerCompliment = findViewById(R.id.spinnercompliments);
+        final Spinner spinnerDefi = findViewById(R.id.spinnerdefi);
+
+        //Spinner citation
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapterCitation = ArrayAdapter.createFromResource(this,
+                R.array.spinnerCitations, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+                adapterCitation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+                spinnerCitation.setAdapter(adapterCitation);
+
+        //Spinner compliment
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapterCompliment = ArrayAdapter.createFromResource(this,
+                R.array.spinnerCompliment, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapterCompliment.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinnerCompliment.setAdapter(adapterCompliment);
+
+        //Spinner défi
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapterDefi = ArrayAdapter.createFromResource(this,
+                R.array.spinnerDefi, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapterDefi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinnerDefi.setAdapter(adapterDefi);
+
         // Upload Smile picture
         buttonConfirmSmile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +111,11 @@ public class PictureActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Uri imageUri) {
                                 mProgressDialog.cancel();
+
+                                String citationsContent = spinnerCitation.getSelectedItem().toString();
+                                String complimentsContent = spinnerCompliment.getSelectedItem().toString();
+                                String defisContent = spinnerDefi.getSelectedItem().toString();
+
                                 String globalEventPath = String.format("%s/%s/%s/%s", "User", mUserId,
                                         "user_smiles", otherUserUid);
                                 HashMap<String, Object> data = new HashMap<>();
@@ -87,6 +123,25 @@ public class PictureActivity extends AppCompatActivity {
                                 mUserReference = FirebaseHelper.getDatabase().getReference("User").child(mUserId);
                                 FirebaseDatabase mDatabase = FirebaseHelper.getDatabase();
                                 mDatabase.getReference().updateChildren(data);
+
+                                String globalEventPathCitations = String.format("%s/%s/%s/%s", "User", mUserId,
+                                        "user_citations", otherUserUid);
+                                HashMap<String, Object> dataCitations = new HashMap<>();
+                                dataCitations.put(globalEventPathCitations, citationsContent);
+                                mDatabase.getReference().updateChildren(dataCitations);
+
+                                String globalEventPathCompliments = String.format("%s/%s/%s/%s", "User", mUserId,
+                                        "user_compliments", otherUserUid);
+                                HashMap<String, Object> dataCompliments = new HashMap<>();
+                                dataCompliments.put(globalEventPathCompliments, complimentsContent);
+                                mDatabase.getReference().updateChildren(dataCompliments);
+
+                                String globalEventPathDefis = String.format("%s/%s/%s/%s", "User", mUserId,
+                                        "user_defis", otherUserUid);
+                                HashMap<String, Object> dataDefis = new HashMap<>();
+                                dataDefis.put(globalEventPathDefis, defisContent);
+                                mDatabase.getReference().updateChildren(dataDefis);
+
                                 Intent intent = new Intent(PictureActivity.this, MainActivity.class);
                                 startActivity(intent);
                             }
@@ -99,42 +154,6 @@ public class PictureActivity extends AppCompatActivity {
                         });
             }
         });
-
-
-        final Spinner spinnerCitation = (Spinner) findViewById(R.id.spinnercitation);
-        final Spinner spinnerCompliment = (Spinner) findViewById(R.id.spinnercompliments);
-        final Spinner spinnerDefi = (Spinner) findViewById(R.id.spinnerdefi);
-
-        //Spinner citation
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapterCitation = ArrayAdapter.createFromResource(this,
-                R.array.spinnerCitations, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-                adapterCitation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-                spinnerCitation.setAdapter(adapterCitation);
-
-
-        //Spinner compliment
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapterCompliment = ArrayAdapter.createFromResource(this,
-                R.array.spinnerCompliment, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapterCompliment.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinnerCompliment.setAdapter(adapterCompliment);
-
-
-        //Spinner défi
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapterDefi = ArrayAdapter.createFromResource(this,
-                R.array.spinnerDefi, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapterDefi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinnerDefi.setAdapter(adapterDefi);
-
-
     }
 
     @Override
