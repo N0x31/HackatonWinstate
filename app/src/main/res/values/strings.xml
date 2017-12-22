@@ -14,28 +14,28 @@
     <string-array name="spinnerCitations">
         <item>Ajoute une citation !</item>
         <item>Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés.</item>
-        <item>Dans la vie on ne fait pas ce que l'on veut mais on est responsable de ce que l'on est.</item>
-        <item>La vie est un mystère qu'il faut vivre, et non un problème à résoudre.</item>
-        <item>La règle d'or de la conduite est la tolérance mutuelle, car nous ne penserons jamais tous de la même façon, nous ne verrons qu'une partie de la vérité et sous des angles différents.</item>
+        <item>Dans la vie on ne fait pas ce que l\'on veut mais on est responsable de ce que l\'on est.</item>
+        <item>La vie est un mystère qu\'il faut vivre, et non un problème à résoudre.</item>
+        <item>La règle d\'or de la conduite est la tolérance mutuelle, car nous ne penserons jamais tous de la même façon, nous ne verrons qu\'une partie de la vérité et sous des angles différents.</item>
         <item>Pour critiquer les gens il faut les connaître, et pour les connaître, il faut les aimer.</item>
-        <item>On passe une moitié de sa vie à attendre ceux qu'on aimera et l'autre moitié à quitter ceux qu'on aime.</item>
+        <item>On passe une moitié de sa vie à attendre ceux qu'on aimera et l\'autre moitié à quitter ceux qu'on aime.</item>
         <item>Le monde est dangereux à vivre ! Non pas tant à cause de ceux qui font le mal, mais à cause de ceux qui regardent et laissent faire.</item>
-        <item>La vie, c'est comme une bicyclette, il faut avancer pour ne pas perdre l'équilibre.</item>
-        <item>Choisissez un travail que vous aimez et vous n'aurez pas à travailler un seul jour de votre vie.</item>
-        <item>On ne souffre jamais que du mal que nous font ceux qu'on aime. Le mal qui vient d'un ennemi ne compte pas.</item>
+        <item>La vie, c\'est comme une bicyclette, il faut avancer pour ne pas perdre l\'équilibre.</item>
+        <item>Choisissez un travail que vous aimez et vous n\'aurez pas à travailler un seul jour de votre vie.</item>
+        <item>On ne souffre jamais que du mal que nous font ceux qu\'on aime. Le mal qui vient d\'un ennemi ne compte pas.</item>
     </string-array>
 
     <!--Spinner Compliment-->
     <string-array name="spinnerCompliment">
         <item>Ajoute un compliment !</item>
         <item>Le plus beau langage du monde est celui que tes yeux utilisent</item>
-        <item>L'adjectif « radieux » est fait pour toi.</item>
-        <item>J'adorerais avoir des cheveux comme les tiens.</item>
+        <item>L\'adjectif « radieux » est fait pour toi.</item>
+        <item>J\'adorerais avoir des cheveux comme les tiens.</item>
         <item>Quelle mine, tu reviens de vacances ?</item>
-        <item>Avec toi, on ne s'ennuie jamais.</item>
-        <item>Tu n'as pas besoin de maquillage.</item>
+        <item>Avec toi, on ne s\'ennuie jamais.</item>
+        <item>Tu n\'as pas besoin de maquillage.</item>
         <item>Donne-moi tes jambes !</item>
-        <item>Tu as gardé ton âme d'enfant.</item>
+        <item>Tu as gardé ton âme d\'enfant.</item>
         <item>À cette soirée, on ne voyait que toi.</item>
     </string-array>
 
